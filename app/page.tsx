@@ -12,7 +12,11 @@ import Image from 'next/image';
 import { IoIosSearch } from "react-icons/io";
 import { FaBell } from "react-icons/fa6";
 import { BsFillQuestionCircleFill } from "react-icons/bs";
-import { href } from 'react-router-dom';
+import { BsPersonPlusFill } from "react-icons/bs";
+import { AiFillNotification } from "react-icons/ai";
+import { BsBookmarkCheck } from "react-icons/bs";
+
+
 
 const Page = () => {
   // State to keep track of the currently active navigation item.
@@ -21,12 +25,22 @@ const Page = () => {
 
   // Array of navigation items, making it easier to map and manage.
   const navItems = [
-    { name: "Dashboard", icon: MdOutlineDashboard, Link: "/" },
-    { name: "Directory", icon: IoPersonCircleOutline, Link: "/components/directory" },
-    { name: "Attendance", icon: CiCalendar, Link: "/components/attendance" },
-    { name: "Grades", icon: MdOutlineGrade, Link: "/components/grades" },
-    { name: "Settings", icon: IoSettingsOutline, Link: "/components/settings" },
+    { name: "Dashboard", icon: MdOutlineDashboard },
+    { name: "Directory", icon: IoPersonCircleOutline},
+    { name: "Attendance", icon: CiCalendar },
+    { name: "Grades", icon: MdOutlineGrade },
+    { name: "Settings", icon: IoSettingsOutline},
   ];
+
+  const schoolStats = [
+    { name: 'Total Students', number: '2,840', description: '+12% from last year' },
+    { name: 'Total Teachers', number: '156', description: '98% Active attendance' },
+    { name: 'Total Classes', number: '48', description: 'Across 8 departments' }
+  ];
+
+
+
+
 
   return (
     <div>
@@ -87,12 +101,93 @@ const Page = () => {
                   <p className='text-[10px] text-gray-500 font-medium tracking-wider'>PRINCIPAL ARCHIVER</p>
                 </div>
                 <div className='w-10 h-10 relative'>
-                  <Image src="/image_9cbc33a4.png" alt="Profile" fill className='rounded-lg object-cover '/>
+                  <Image src="/image_9cbc33a4.png" alt="Profile" fill sizes="40px" className='rounded-lg object-cover'/>
                 </div>
               </div>
             </div>
           </header>
 
+          <main className='space-y-6'>
+            {active === "Dashboard" && (
+              <div className='space-y-6'>
+                <div className='w-full flex justify-between gap-5 items-center'>
+                  <div>
+                    <h2 className='text-2xl font-bold text-[#1A5276] mb-2'>Campus Overview</h2>
+                    <p className='text-gray-600'>Curated academic analytics and real-time administrative metrics.</p>
+                  </div>
+
+                  <div className='flex gap-4'>
+                    <div className='bg-white shadow-sm border border-gray-100 p-4 rounded-lg flex gap-3 items-center cursor-pointer hover:bg-gray-50 transition-colors'>
+                  <span className='text-[#1A5276]'>   <BsPersonPlusFill size={25}/> </span> 
+                      <p className='font-medium text-sm'>Add Student</p>
+                    </div>
+                    <div className='bg-white shadow-sm border border-gray-100 p-4 rounded-lg flex gap-3 items-center cursor-pointer hover:bg-gray-50 transition-colors'>
+                    <span className='text-[#1A5276]'>  <AiFillNotification size={25} /> </span>
+                      <p className='font-medium text-sm'>Post Notice</p>
+                    </div>
+                    <div className='flex gap-3 bg-[#1A5276] text-white p-4 rounded-lg items-center cursor-pointer hover:bg-[#154360] transition-colors'>
+                      <BsBookmarkCheck size={25}/>
+                      <p className='font-medium text-sm'>Mark Attendance</p>
+                    </div>
+                  </div>
+                </div>
+
+<div className='flex flex-row gap-10'>
+                <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-5'>
+                  {schoolStats.map((stat) => (
+                    <div key={stat.name} className='bg-white shadow-sm border border-gray-100 p-6 rounded-xl'>
+                      <p className='text-sm text-gray-500 font-medium mb-1'>{stat.name}</p>
+                      <h3 className='text-2xl font-bold text-[#1A5276] mb-1'>{stat.number}</h3>
+                      <p className='text-xs text-green-600 font-medium'>{stat.description}</p>
+                    </div>
+                  ))}
+                </div>
+
+<div className='bg-[#6B4604] text-white p-3 rounded-lg flex flex-col gap-5'>
+  <p className='text-[#c6a367]'>Enrollment Goal</p>
+  <div>
+  <h1 className='text-2xl'>94%</h1>
+  <p className='text-xtrasmall text-gray-300'>TARGET 3,000 </p>
+<input type="range" min="0" max="100" defaultValue="94" className='bg-white'/>
+</div>
+</div>
+</div>
+
+              </div>
+            )}
+
+
+
+
+
+            {active === "Directory" && (
+              <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100'>
+                <h2 className='text-xl font-bold text-[#1A5276] mb-4'>Directory</h2>
+                <p className='text-gray-600'>Here you can find all the directory entries in the academic archive.</p>
+              </div>
+            )}
+
+            {active === "Attendance" && (
+              <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100'>
+                <h2 className='text-xl font-bold text-[#1A5276] mb-4'>Attendance</h2>
+                <p className='text-gray-600'>Here you can find all the attendance records in the academic archive.</p>
+              </div>
+            )}
+
+            {active === "Grades" && (
+              <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100'>
+                <h2 className='text-xl font-bold text-[#1A5276] mb-4'>Grades</h2>
+                <p className='text-gray-600'>Here you can find all the grade records in the academic archive.</p>
+              </div>
+            )}
+
+            {active === "Settings" && (
+              <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100'>
+                <h2 className='text-xl font-bold text-[#1A5276] mb-4'>Settings</h2>
+                <p className='text-gray-600'>Here you can adjust your settings and preferences for the academic archive.</p>
+              </div>
+            )}
+          </main>
         
         </div>
       </div>
