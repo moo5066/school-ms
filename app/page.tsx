@@ -22,6 +22,7 @@ const Page = () => {
   // State to keep track of the currently active navigation item.
   // Initialized to "Dashboard" as it's typically the default view.
   const [active, setActive] = useState("Dashboard");
+  const [trendTab, setTrendTab] = useState("Monthly");
 
   // Array of navigation items, making it easier to map and manage.
   const navItems = [
@@ -37,6 +38,14 @@ const Page = () => {
     { name: 'Total Teachers', number: '156', description: '98% Active attendance' },
     { name: 'Total Classes', number: '48', description: 'Across 8 departments' }
   ];
+
+const listItems = [
+  "HUMANITIES",
+  "SCIENCE",
+  "ECONOMICS",
+  "FINEARTS"
+]
+
 
 
 
@@ -69,6 +78,14 @@ const Page = () => {
               ))}
             </ul>
           </nav>
+
+<div className='absolute bottom-5'>
+  <div className='bg-[#1A5276] text-white p-3 rounded-lg flex items-center gap-3 cursor-pointer hover:bg-[#154360] transition-colors'>
+    <p>+ New Record</p>
+  </div>
+</div>
+
+
         </div>
 
         {/* Main content area */}
@@ -151,9 +168,144 @@ const Page = () => {
 <input type="range" min="0" max="100" defaultValue="94" className='bg-white'/>
 </div>
 </div>
+              </div>
+
+              <div className='flex flex-col lg:flex-row w-full justify-around items-start gap-10'>
+                <div className='mt-10 lg:mt-20 bg-gray-200 p-5 rounded-lg w-full lg:max-w-[650px] min-h-[480px] flex flex-col justify-between'>
+                  <div>
+
+
+       <div className='flex flex-nowrap justify-between items-center mb-5 gap-4 overflow-x-auto pb-2 scrollbar-hide'> 
+        <div className='shrink-0'>
+        <h1 className='text-xl md:text-2xl font-bold text-[#1A5276] mb-1 whitespace-nowrap'>Live Enrollment Trends</h1>
+        <p className='text-gray-500 text-xs md:text-sm whitespace-nowrap'>Comparative analysis of new registrations by faculty</p>
+        </div>
+        <div className='flex flex-nowrap gap-2 bg-white p-1 rounded-lg shrink-0'>
+          <h2 
+            onClick={() => setTrendTab("Monthly")} 
+            className={`px-4 py-1.5 rounded-md cursor-pointer text-sm transition-all whitespace-nowrap ${
+              trendTab === "Monthly" ? "bg-[#1A5276] font-bold text-white shadow-sm" : "text-gray-500 hover:bg-gray-50"
+            }`}
+          >
+            Monthly
+          </h2>
+          <h2 
+            onClick={() => setTrendTab("Quarterly")} 
+            className={`px-4 py-1.5 rounded-md cursor-pointer text-sm transition-all whitespace-nowrap ${
+              trendTab === "Quarterly" ? "bg-[#1A5276] font-bold text-white shadow-sm" : "text-gray-500 hover:bg-gray-50"
+            }`}
+          >
+            Quarterly
+          </h2>
+        </div>
+      </div>
+      
+
+
+
+<div className='mt-20 lg:mt-32 mx-4 md:mx-10'>
+  <div className='flex justify-between items-center mb-5 text-sm '>
+    {listItems .map((item)=>(
+      <div key={item}>{item}</div>
+    ))}
+  </div>
 </div>
 
-              </div>
+<hr className='mt-10 text-gray-300'/>
+
+<div className='flex items-center gap-5 mt-10'>
+  <div>
+    <h1 className='text-gray-500 text-sm'>PEAK PERIOD</h1>
+    <p className='text-lg font-medium'>August 12-sep 05</p>
+  </div>
+  <div>
+    <h1 className='text-gray-500 text-sm'>TOP FACULTY</h1>
+    <p className='text-lg font-medium'>Computer Sceince (CS)</p>
+  </div>
+
+</div>
+</div>   
+</div>
+
+<div className='flex flex-col gap-5'>
+<div className='bg-gray-300 shadow-sm p-5 rounded-lg lg:mt-20'>
+  <div>
+    <div className='flex justify-between'>
+    <h1>Upcoming Events</h1>
+<p>veiw All</p>
+  </div>
+
+<div>
+  <div className='flex gap-5 bg-white p-5 rounded-lg mb-5'>
+  <div className='flex flex-col bg-gray-200 p-2 rounded-lg'>
+    <p>SEP</p>
+    <p>24</p>
+  </div>
+
+  <div className='text-gray-500 flex flex-col items-center'>
+    <p>Faculty Seminar</p>
+    <p>10:00 AM.Main Hall</p>
+  </div>
+  </div>
+  <div className='flex gap-5 bg-white p-5 rounded-lg mb-5'>
+  <div className='flex flex-col bg-gray-200 p-2 rounded-lg'>
+    <p>OCT</p>
+    <p>02</p>
+  </div>
+
+  <div className='text-gray-500 flex flex-col items-center'>
+    <p>Sport Meet</p>
+    <p>8:30AM.West Stadium</p>
+  </div>
+  </div>
+  <div className='flex gap-5 bg-white p-5 rounded-lg mb-5'>
+  <div className='flex flex-col bg-gray-200 p-2 rounded-lg'>
+    <p>OCT</p>
+    <p>15</p>
+  </div>
+
+  <div className='text-gray-500 flex flex-col items-center'>
+    <p>Mid-Term Reviews</p>
+    <p>All Days.Academic wing</p>
+  </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+
+
+
+<div>
+  <div className='bg-[#1A5276] text-white p-2 rounded-lg'>
+    <h1 className='text-xl font-bold  rounded-md mb-2'>LIBRARY ACCESS</h1>
+    <p className='text-gray-200 text-sm mb-5'>Digital archivies are currently undergoing maintenance.</p>
+  </div>
+</div>
+
+
+
+ </div>
+</div>
+
+
+<div className='flex justify-around w-full text-gray-500'>
+  <div>
+    Ⓒ 2024 Atheneum Academic Archive. All rights reserved.
+  </div>
+<div className='flex gap-5'>
+  <p>System</p>
+  <p>DATA PRIVACY</p>
+  <p>SUPPORT</p>
+</div>
+</div>
+
+
+</div> 
+
+
+
             )}
 
 
@@ -196,3 +348,22 @@ const Page = () => {
 }
 
 export default Page
+// import React from 'react'
+
+// const page = () => {
+
+// function handleClick(){
+//   console.log("add Click");
+  
+// }
+
+
+
+//   return (
+//     <div>
+//       <button onClick={handleClick}>Click Me</button>
+//     </div>
+//   )
+// }
+
+// export default page
