@@ -15,6 +15,9 @@ import { BsFillQuestionCircleFill } from "react-icons/bs";
 import { BsPersonPlusFill } from "react-icons/bs";
 import { AiFillNotification } from "react-icons/ai";
 import { BsBookmarkCheck } from "react-icons/bs";
+import { MdGrade } from "react-icons/md";
+import { PiBuildingApartmentDuotone } from "react-icons/pi";
+import { MdDownload } from "react-icons/md";
 
 
 
@@ -23,6 +26,7 @@ const Page = () => {
   // Initialized to "Dashboard" as it's typically the default view.
   const [active, setActive] = useState("Dashboard");
   const [trendTab, setTrendTab] = useState("Monthly");
+  const [directorTab, setDirectorTab] = useState("Grade12");
 
   // Array of navigation items, making it easier to map and manage.
   const navItems = [
@@ -32,6 +36,22 @@ const Page = () => {
     { name: "Grades", icon: MdOutlineGrade },
     { name: "Settings", icon: IoSettingsOutline},
   ];
+
+  const directoryList=[
+    { name: "Grade12", icon: MdGrade },
+    { name: "SectionB", icon: PiBuildingApartmentDuotone },
+    { name: "Export", icon: MdDownload },
+  ]
+
+
+  const lists =[
+    
+    "ACADEMIC PROFILE",'ID','ATTENDANCE','GPA','ACTION' 
+  ]
+
+  function handleClick(){
+    console.log("Hello Mohamed Abdulkadir Abdulahi")
+  }
 
   const schoolStats = [
     { name: 'Total Students', number: '2,840', description: '+12% from last year' },
@@ -81,7 +101,7 @@ const listItems = [
 
 <div className='absolute bottom-5'>
   <div className='bg-[#1A5276] text-white p-3 rounded-lg flex items-center gap-3 cursor-pointer hover:bg-[#154360] transition-colors'>
-    <p>+ New Record</p>
+    <p onClick={handleClick}>+ New Record</p>
   </div>
 </div>
 
@@ -294,7 +314,7 @@ const listItems = [
   <div>
     Ⓒ 2024 Atheneum Academic Archive. All rights reserved.
   </div>
-<div className='flex gap-5'>
+<div className='flex justify-around items-center gap-5'>
   <p>System</p>
   <p>DATA PRIVACY</p>
   <p>SUPPORT</p>
@@ -313,10 +333,40 @@ const listItems = [
 
 
             {active === "Directory" && (
-              <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100'>
-                <h2 className='text-xl font-bold text-[#1A5276] mb-4'>Directory</h2>
-                <p className='text-gray-600'>Here you can find all the directory entries in the academic archive.</p>
-              </div>
+              <div>
+              <div className=' flex justify-between p-6  border border-gray-100'>
+                <div className='w-full max-w-md'>
+                <h2 className=' font-bold text-[#1A5276] text-2xl mb-4'>Student Directory</h2>
+                <p className='text-gray-600'>Curated academic registry for the 2023-2024 Archive Session.</p>
+                </div>
+                <div className='flex justify-end-safe items-center gap-5 w-full'>
+                  {/* <p onClick={()=>setDirectorTab("Grade12")} className={`flex items-center  shadow-sm p-2 rounded-lg gap-2 ${directorTab === "Grade12" ? "bg-[#1A5276] text-white" : "bg-white text-[#1A5276]"}`}><span><MdGrade size={20}/></span><span >Grade12</span></p>
+                  <p onClick={()=>setDirectorTab("SectionB")} className={`flex items-center bg-white shadow-sm p-2 rounded-lg  gap-2 ${directorTab === "SectionB" ? "bg-[#1A5276] text-white" : "bg-white text-[#1A5276]"}`}><span><PiBuildingApartmentDuotone size={20}/></span><span>SectionB</span></p>
+                  <p onClick={()=>setDirectorTab("Export")} className={`flex items-center text-white shadow-sm p-2 rounded-lg  gap-2 ${directorTab === "Export" ? "bg-[#1A5276] text-white" : "bg-white text-[#1A5276]"}`}><span><MdDownload size={20}/></span><span>Export</span></p> */}
+
+{directoryList.map((item)=>(
+  <div key={item.name} onClick={()=>setDirectorTab(item.name)} className={`flex items-center cursor-pointer shadow-sm p-2 rounded-lg gap-2 transition-colors ${directorTab === item.name ? "bg-[#1A5276] text-white" : "bg-white text-[#1A5276]"}`}>
+    <item.icon size={20}/>
+    <span>{item.name}</span>
+  </div>
+))}
+
+                </div>
+</div>
+
+<div>
+  <div>
+  
+  </div> 
+</div>
+
+
+
+
+</div>
+
+
+              
             )}
 
             {active === "Attendance" && (
