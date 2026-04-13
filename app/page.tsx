@@ -18,6 +18,7 @@ import { BsBookmarkCheck } from "react-icons/bs";
 import { MdGrade } from "react-icons/md";
 import { PiBuildingApartmentDuotone } from "react-icons/pi";
 import { MdDownload } from "react-icons/md";
+import { FcIdea } from "react-icons/fc";
 
 
 
@@ -47,10 +48,23 @@ const Page = () => {
     setTrendTab("Monthly")
   }
 
-  const lists =[
+  const [archive, setArchive] = useState("Bulk Records Update")
+
+function handleArchive() {
+  setArchive("Bulk Records Update")
+}
+function handleTwo() {
+  setArchive("Class Transition Log")
+}
+function handleThree() {
+  setArchive("ID Card Printing")
+}
+
+
+  // const lists =[
     
-    "ACADEMIC PROFILE",'ID','ATTENDANCE','GPA','ACTION' 
-  ]
+  //   "ACADEMIC PROFILE",'ID','ATTENDANCE','GPA','ACTION' 
+  // ]
 
   function handleClick(){
     console.log("Hello Mohamed Abdulkadir Abdulahi")
@@ -358,7 +372,7 @@ const listItems = [
 </div>
 
 <div className='flex flex-col lg:flex lg:flex-row  gap-5 p-5'>
-  <div className=' bg-white shadow-sm p-3 rounded-lg lg:w-[70%]'>
+  <div className=' bg-white shadow-sm p-3 rounded-lg lg:w-[70%] lg:h-110 overflow-y-auto'>
   <div className='text-sm flex justify-between items-center gap-5 bg-gray-200 p-5 rounded-lg mb-5'>
     <p>ACADEMIC PROFILE</p>
     <p>ID</p>
@@ -398,10 +412,23 @@ const listItems = [
   </div>
 </div>
 
-  </div> 
+<div className='flex justify-between mt-5 items-center text-sm text-gray-500'>
+  <div>
+<p>SHOWING 1 TO 4 OF 42 RECORDS</p>
+  </div>
+  <div className='flex justify-between gap-10'>
+    <p>Previous Archive</p>
+    <p>Next Archive</p>
+  </div>
+</div>
+
+</div>
 
 
-<div>
+
+
+
+<div className='lg:w-[30%]'>
     <div className='bg-[#1A5276] text-white p-6 rounded-lg flex flex-col gap-5 '>
       <p className='text-xl text-gray-300'>CLASS INSIGHTS</p>
       <div>
@@ -426,9 +453,39 @@ const listItems = [
 
 </div>
 
-
-
   </div>
+
+{/* <div > */}
+  <div className=' p-5 rounded-lg mt-5 bg-[#ded6c8]'>
+  <div className='flex items-center gap-3 mb-3 text-2xl font-bold justify-center text-[#6b4604]'>
+<FcIdea/>
+<p>CURATOR'S NOTES</p>
+</div>
+<div>
+  <p className='text-gray-500 text-sm text-mono'>This section provides a comprehensive overview of the students in Grade 12, showcasing their academic performance, attendance records, and overall class insights. The directory allows for easy access to individual student profiles, enabling educators and administrators to monitor progress and identify areas for support.</p>
+</div>
+  
+{/* </div> */}
+</div>
+
+
+<div>
+  <div className='bg-gray-300 mt-5  shadow-sm p-5 rounded-lg'>
+    <h1 className='text-gray-500 text-xl font-bold mb-7'>ARCHIVAL TOOLS</h1>
+    <div className='flex flex-col gap-3'>
+      <h2 onClick={handleArchive} className={`bg-white text-black p-2 font-bold text-xl rounded-lg ${archive === "Bulk Records Update" ? "ring-2 ring-blue-500" : ""}`}>Bulk Records Update</h2>
+      <h2 onClick={handleTwo} className={`bg-white text-black p-2 font-bold text-xl rounded-lg ${archive === "Class Transition Log" ? "ring-2 ring-blue-500" : ""}`}>Class Transition Log</h2>
+      <h2 onClick={handleThree} className={`bg-white text-black p-2 font-bold text-xl rounded-lg ${archive === "ID Card Printing" ? "ring-2 ring-blue-500" : ""}`}>ID Card Printing</h2>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
 </div>
 
 
