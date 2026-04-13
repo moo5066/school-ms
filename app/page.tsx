@@ -354,10 +354,85 @@ const listItems = [
                 </div>
 </div>
 
+<div className='flex gap-5 max-w-full overflow-x-hidden p-5'>
+  <div className='w-[70%] bg-white shadow-sm p-3 rounded-lg'>
+  <div className='text-sm flex justify-between items-center gap-5 bg-gray-200 p-5 rounded-lg mb-5'>
+    <p>ACADEMIC PROFILE</p>
+    <p>ID</p>
+    <p>ATTENDENCE</p>
+    <p>GPA</p>
+    <p>ACTION</p>
+  </div>
+
+<div className='flex flex-col gap-10 '>
+  <div className='flex justify-between items-center p-1'>
+    <p className='text-lg font-bold'>Julian Sterling</p>
+    <p>2023-082</p>
+    <p className='border-b-2 border-[#1A5276]'>94%</p>
+    <p className='bg-blue-200 p-1 rounded-md'>3.92</p>
+    <p className='text-[#1A5276] hover:underline cursor-pointer'>View Profile</p>
+  </div>
+  <div className='flex justify-between items-center mt-5'>
+    <p className='text-lg font-bold'>Elena Rodriguez</p>
+    <p>2023-114</p>
+    <p className='border-b-2 border-[#1A5276]'>98%</p>
+    <p className='bg-blue-200 p-1 rounded-md'>4.00</p>
+    <p className='text-[#1A5276] hover:underline cursor-pointer'>View Profile</p>
+  </div>
+  <div className='flex justify-between items-center mt-5'>
+    <p className='text-lg font-bold'>Marcos Thorne</p>
+    <p>2023-059</p>
+    <p className='border-b-2 border-[#1A5276]'>82%</p>
+    <p className='bg-gray-200 p-1 rounded-md'>3.15</p>
+    <p className='text-[#1A5276] hover:underline cursor-pointer'>View Profile</p>
+  </div>
+  <div className='flex justify-between items-center mt-5'>
+    <p className='text-lg font-bold'>Sienna Voss</p>
+    <p>2023-091</p>
+    <p className='border-b-2 border-[#1A5276]'>91%</p>
+    <p className='bg-blue-200 p-1 rounded-md'>3.78</p>
+    <p className='text-[#1A5276] hover:underline cursor-pointer'>View Profile</p>
+  </div>
+</div>
+
+  </div> 
+
+
 <div>
   <div>
-  
-  </div> 
+    <div>
+      <p>CLASS INSIGHTS</p>
+      <div>
+    <h1>3.64</h1>
+    <p>AVRAGE CLASS GPA</p>
+    </div>
+
+<div className='flex gap-10 mt-5'>
+
+
+  <div>
+  <h1>92%</h1>
+  <p>ATTENDANCE</p>
+  </div>
+
+  <div>
+  <h1>18</h1>
+  <p>DISTINCTIONS</p>
+  </div>
+
+
+
+</div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
 </div>
 
 
