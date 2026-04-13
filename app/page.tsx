@@ -43,6 +43,9 @@ const Page = () => {
     { name: "Export", icon: MdDownload },
   ]
 
+  function handleTrendTab(){
+    setTrendTab("Monthly")
+  }
 
   const lists =[
     
@@ -202,7 +205,7 @@ const listItems = [
         </div>
         <div className='flex flex-nowrap gap-2 bg-white p-1 rounded-lg shrink-0'>
           <h2 
-            onClick={() => setTrendTab("Monthly")} 
+            onClick={handleTrendTab} 
             className={`px-4 py-1.5 rounded-md cursor-pointer text-sm transition-all whitespace-nowrap ${
               trendTab === "Monthly" ? "bg-[#1A5276] font-bold text-white shadow-sm" : "text-gray-500 hover:bg-gray-50"
             }`}
@@ -333,8 +336,8 @@ const listItems = [
 
 
             {active === "Directory" && (
-              <div>
-              <div className=' flex justify-between p-6  border border-gray-100'>
+              <div className=''>
+              <div className=' flex justify-between p-6  border border-gray-100 rounded-xl shadow-sm bg-white'>
                 <div className='w-full max-w-md'>
                 <h2 className=' font-bold text-[#1A5276] text-2xl mb-4'>Student Directory</h2>
                 <p className='text-gray-600'>Curated academic registry for the 2023-2024 Archive Session.</p>
@@ -354,8 +357,8 @@ const listItems = [
                 </div>
 </div>
 
-<div className='flex gap-5 max-w-full overflow-x-hidden p-5'>
-  <div className='w-[70%] bg-white shadow-sm p-3 rounded-lg'>
+<div className='flex flex-col lg:flex lg:flex-row  gap-5 p-5'>
+  <div className=' bg-white shadow-sm p-3 rounded-lg lg:w-[70%]'>
   <div className='text-sm flex justify-between items-center gap-5 bg-gray-200 p-5 rounded-lg mb-5'>
     <p>ACADEMIC PROFILE</p>
     <p>ID</p>
@@ -399,25 +402,24 @@ const listItems = [
 
 
 <div>
-  <div>
-    <div>
-      <p>CLASS INSIGHTS</p>
+    <div className='bg-[#1A5276] text-white p-6 rounded-lg flex flex-col gap-5 '>
+      <p className='text-xl text-gray-300'>CLASS INSIGHTS</p>
       <div>
-    <h1>3.64</h1>
+    <h1 className='text-3xl font-bold'>3.64</h1>
     <p>AVRAGE CLASS GPA</p>
     </div>
 
 <div className='flex gap-10 mt-5'>
 
 
-  <div>
-  <h1>92%</h1>
-  <p>ATTENDANCE</p>
+  <div >
+  <h1 className='text-lg font-bold' >92%</h1>
+  <p className='text-gray-300'>ATTENDANCE</p>
   </div>
 
   <div>
-  <h1>18</h1>
-  <p>DISTINCTIONS</p>
+  <h1 className='text-lg font-bold'>18</h1>
+  <p className='text-gray-300'>DISTINCTIONS</p>
   </div>
 
 
@@ -426,7 +428,6 @@ const listItems = [
 
 
 
-    </div>
   </div>
 </div>
 
