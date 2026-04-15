@@ -19,6 +19,7 @@ import { MdGrade } from "react-icons/md";
 import { PiBuildingApartmentDuotone } from "react-icons/pi";
 import { MdDownload } from "react-icons/md";
 import { FcIdea } from "react-icons/fc";
+import { FaRegCalendarAlt } from "react-icons/fa";
 
 
 
@@ -59,6 +60,8 @@ function handleTwo() {
 function handleThree() {
   setArchive("ID Card Printing")
 }
+
+const [on,setOn]=useState()
 
 
   // const lists =[
@@ -503,16 +506,61 @@ const listItems = [
             )}
 
             {active === "Attendance" && (
-              <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100'>
-                <h2 className='text-xl font-bold text-[#1A5276] mb-4'>Attendance</h2>
-                <p className='text-gray-600'>Here you can find all the attendance records in the academic archive.</p>
+              <div>
+              <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex flex-col gap-5 lg:flex lg:flex-row justify-between  items-center'>
+                <div>
+                <h2 className='text-xl font-bold text-[#1A5276] mb-4'>Attendance Manegmnet</h2>
+                <p className='text-gray-600'>Advanced Litterature-Room 402 .Archive ID:ALT-402-24.</p>
+              </div>
+              <div className='flex flex-row gap-7'>
+  <div  className='flex flex-col gap-5 bg-white shadow-sm px-5 py-1 shadow-[#1a5276] border-b border-[#1a5276] rounded-lg hover:scale-105 transition-colors'>
+    <p>PRESENT</p>
+    <h1><span className='text-3xl text-[#1a5276] font-bold'>24</span><span>/28Students</span></h1>
+  </div>
+  <div className='flex flex-col gap-5 bg-white shadow-sm px-5 py-1 shadow-[#6b4604] border-b border-[#1a5276] rounded-lg hover:scale-105 transition-colors'>
+    <p >ABSENT</p>
+    <h1><span  className='text-3xl text-[#6b4604] font-bold'>03</span><span>Authorized</span></h1>
+  </div>
+  <div className='flex flex-col gap-5 bg-white shadow-sm px-6 py-2 shadow-[#b21212] border-b border-[#b21212] rounded-lg hover:scale-105 transition-colors'>
+    <p>LATE</p>
+    <h1><span  className='text-3xl text-[#b21212] font-bold'>01</span><span>Entry Flag</span></h1>
+  </div> 
+</div>
+
+
+<div>
+  <div>
+    <div>
+    <p>SESSION DATE</p>
+    <div>
+      <FaRegCalendarAlt/>
+      <p>Monday , Oct 23 2023</p>
+    </div>
+
+  <div>
+    
+  </div>
+    </div>
+
+  </div>
+</div>
+
+
+              </div>
               </div>
             )}
 
             {active === "Grades" && (
+              <div>
               <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100'>
+                <div>
                 <h2 className='text-xl font-bold text-[#1A5276] mb-4'>Grades</h2>
                 <p className='text-gray-600'>Here you can find all the grade records in the academic archive.</p>
+                </div>
+
+
+
+              </div>
               </div>
             )}
 
