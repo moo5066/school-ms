@@ -20,6 +20,9 @@ import { PiBuildingApartmentDuotone } from "react-icons/pi";
 import { MdDownload } from "react-icons/md";
 import { FcIdea } from "react-icons/fc";
 import { FaRegCalendarAlt } from "react-icons/fa";
+import { FcGraduationCap } from "react-icons/fc";
+import { CgExport } from "react-icons/cg";
+import { FaRegSave } from "react-icons/fa";
 
 
 
@@ -526,27 +529,46 @@ const listItems = [
     <h1><span  className='text-3xl text-[#b21212] font-bold'>01</span><span>Entry Flag</span></h1>
   </div> 
 </div>
+ </div>
 
-
-<div>
-  <div>
+<div className='mt-10 bg-gray-200 p-5 rounded-lg'>
+  <div className='flex gap-5'>
     <div>
     <p>SESSION DATE</p>
-    <div>
+    <div className='flex gap-3 items-center bg-white py-2 lg:py-5 px-6 lg:px-10  rounded-lg'>
       <FaRegCalendarAlt/>
       <p>Monday , Oct 23 2023</p>
     </div>
+ </div>
 
   <div>
-    
-  </div>
+     <div>
+    <p>COHORT SELECTION</p>
+    <div className='flex gap-3 items-center bg-white py-2 lg:py-5 px-6 lg:px-10  rounded-lg'>
+      <FcGraduationCap/>
+      <p>Advanced Literature -Room 402</p>
     </div>
+  </div>
+   
 
   </div>
 </div>
 
+<div className='flex gap-5 mt-10'>
+  <div className='bg-white p-4 flex gap-3 items-center rounded-lg border border-gray-400'>
+<CgExport size={20}/>
+<p>Export PDF</p>
+  </div>
+  <div className='bg-[#1A5276] text-white p-4 flex gap-3 flex gap-3 items-center rounded-lg border border-gray-400'>
+<FaRegSave/>
+<p>Commit Records</p>
+  </div>
+</div>
 
-              </div>
+</div>
+
+
+             
               </div>
             )}
 
