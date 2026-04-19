@@ -23,6 +23,7 @@ import { FaRegCalendarAlt } from "react-icons/fa";
 import { FcGraduationCap } from "react-icons/fc";
 import { CgExport } from "react-icons/cg";
 import { FaRegSave } from "react-icons/fa";
+import { CiMenuBurger } from "react-icons/ci";
 
 
 
@@ -559,13 +560,45 @@ const listItems = [
 <CgExport size={20}/>
 <p>Export PDF</p>
   </div>
-  <div className='bg-[#1A5276] text-white p-4 flex gap-3 flex gap-3 items-center rounded-lg border border-gray-400'>
+  <div className='bg-[#1A5276] text-white p-4 flex gap-3 items-center rounded-lg border border-gray-400'>
 <FaRegSave/>
 <p>Commit Records</p>
   </div>
 </div>
 
 </div>
+
+<div className='mt-10 bg-white rounded-lg shadow-sm border border-gray-100 lg:w-[60%]  '>
+  <div className='flex justify-between bg-gray-200 p-2 rounded-lg text-sm text-gray-700'>
+    <p>STUDENT ARCHIVE</p>
+    <p>STUDENT REGISTRY</p>
+    <p>REMARKS</p>
+  </div>
+
+   <div className='flex justify-between items-center mt-3 px-3'>
+    <div>
+      <h1>Arthur Pendragon</h1>
+      <p>UID:2023-2012</p>
+    </div>
+    <div className='flex gap-5'>
+      <p>PRESENT</p>
+      <p>ABSENT</p>
+      <p>LATE</p>
+    </div>
+
+<div>
+  <CiMenuBurger/>
+</div>
+
+
+   </div>
+
+</div>
+
+
+
+
+
 
 
              
