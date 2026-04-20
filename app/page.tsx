@@ -48,12 +48,7 @@ const Page = () => {
     { name: "SectionB", icon: PiBuildingApartmentDuotone },
     { name: "Export", icon: MdDownload },
   ]
-
-  function handleTrendTab(){
-    setTrendTab("Monthly")
-  }
-
-  const [archive, setArchive] = useState("Bulk Records Update")
+  const [archive, setArchive]=useState("Bulk Records Update")
 
 function handleArchive() {
   setArchive("Bulk Records Update")
@@ -64,6 +59,36 @@ function handleTwo() {
 function handleThree() {
   setArchive("ID Card Printing")
 }
+
+const [students , setStudents]=useState([
+  {id:1, name: "Authur Pendragon" , uid:"2023-2012" , status:"PRESENT"},
+  {id:2, name:"Guinerere Vance", uid:"2023-0045",status:"PRESENT"},
+  {id:3, name:"Lancelot Dulac", uid:"2023-0102",status:"PRESENT"},
+  {id:4, name:"Morgan LeFay", uid:"2023-0189",status:"PRESENT"},
+])
+
+function updateStatus(id: number, newStatus: string){
+setStudents(prev =>
+prev.map(student =>
+  student.id === id ? { ...student, status: newStatus } : student
+
+)
+)
+}
+
+
+
+
+
+
+  function handleTrendTab(){
+    setTrendTab("Monthly")
+  }
+
+  
+// function handleAttendenceTwelve() {
+//   setAttendence("LATE")
+// }
 
 const [on,setOn]=useState()
 
@@ -568,34 +593,44 @@ const listItems = [
 
 </div>
 
-<div className='mt-10 bg-white rounded-lg shadow-sm border border-gray-100 lg:w-[60%]  '>
-  <div className='flex justify-between bg-gray-200 p-2 rounded-lg text-sm text-gray-700'>
-    <p>STUDENT ARCHIVE</p>
-    <p>STUDENT REGISTRY</p>
-    <p>REMARKS</p>
-  </div>
 
-   <div className='flex justify-between items-center mt-3 px-3'>
-    <div>
-      <h1>Arthur Pendragon</h1>
-      <p>UID:2023-2012</p>
+
+<div className='mt-10 bg-white rounded-lg shadow-sm border border-gray-100 lg:w-[60%]'>
+
+  {students.map(student => (
+    <div key={student.id} className='flex justify-between items-center mt-3 px-3'>
+
+      <div>
+        <h1 className='font-bold text-lg'>{student.name}</h1>
+        <p>UID:{student.uid}</p>
+      </div>
+
+      <div className='flex gap-5'>
+        {["PRESENT", "ABSENT", "LATE"].map(status => (
+          <p
+            key={status}
+            onClick={() => updateStatus(student.id, status)}
+            className={`p-2 ${
+              student.status === status
+                ? status === "PRESENT"
+                  ? "bg-[#1A5276] text-white rounded-lg"
+                  : status === "ABSENT"
+                  ? "bg-[#e31e1e] text-white rounded-lg"
+                  : "bg-[#6B4604] text-white rounded-lg"
+                : "bg-white text-[#1A5276]"
+            }`}
+          >
+            {status}
+          </p>
+        ))}
+      </div>
+
+      <CiMenuBurger />
+
     </div>
-    <div className='flex gap-5'>
-      <p>PRESENT</p>
-      <p>ABSENT</p>
-      <p>LATE</p>
-    </div>
-
-<div>
-  <CiMenuBurger/>
-</div>
-
-
-   </div>
+  ))}
 
 </div>
-
-
 
 
 
