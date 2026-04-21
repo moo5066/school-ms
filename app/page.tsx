@@ -24,6 +24,7 @@ import { FcGraduationCap } from "react-icons/fc";
 import { CgExport } from "react-icons/cg";
 import { FaRegSave } from "react-icons/fa";
 import { CiMenuBurger } from "react-icons/ci";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 
 
 
@@ -536,7 +537,7 @@ const listItems = [
 
             {active === "Attendance" && (
               <div>
-              <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex flex-col gap-5 lg:flex lg:flex-row justify-between  items-center'>
+              <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col gap-5 lg:flex lg:flex-row justify-between  items-center'>
                 <div>
                 <h2 className='text-xl font-bold text-[#1A5276] mb-4'>Attendance Manegmnet</h2>
                 <p className='text-gray-600'>Advanced Litterature-Room 402 .Archive ID:ALT-402-24.</p>
@@ -594,8 +595,17 @@ const listItems = [
 </div>
 
 
-
+<div className='flex flex-col gap-5 mt-10 lg:flex lg:flex-row lg:gap-10'>
 <div className='mt-10 bg-white rounded-lg shadow-sm border border-gray-100 lg:w-[60%]'>
+
+
+  <div>
+    <div className='flex justify-between p-2 bg-gray-200'>
+      <p>STUDENT ARCHIVE</p>
+      <p>STUDENT REGISFRY</p>
+      <p>REMARKS</p>
+    </div>
+  </div>
 
   {students.map(student => (
     <div key={student.id} className='flex justify-between items-center mt-3 px-3'>
@@ -605,7 +615,7 @@ const listItems = [
         <p>UID:{student.uid}</p>
       </div>
 
-      <div className='flex gap-5'>
+      <div className='flex gap-5 mt-10 p-2'>
         {["PRESENT", "ABSENT", "LATE"].map(status => (
           <p
             key={status}
@@ -629,11 +639,48 @@ const listItems = [
 
     </div>
   ))}
+</div>
 
+<div>
+<div className='bg-[#1A5276] text-white p-5 rounded-lg lg:h-70 overflow-y-auto'>
+  <div>
+    <h1 className='text-2xl  font-semibold'>Cusator's Notes</h1>
+<div className='flex items-center gap-5 mt-5'>
+  <IoIosInformationCircleOutline size={30}/>
+  <p className='text-medium'>Session forcus:Victorian Era symbolism in Gothic Architecture.Quiz scheduled for tomorrow.</p>
+</div>
+<hr className='mt-10  '/>
+
+<div className='mt-5'>
+  <p className='text-gray-400'>ASSINGED INSTRUCTOR</p>
+  <p>DR.Alistair Thorne</p>
+</div>
+  </div>
+</div>
+
+<div className='bg-gray-200  p-3 rounded-lg mt-10 lg:h-30'>
+  <div>
+    <div className='flex justify-around text-xl font-semibold'>
+    <h1>CLASS VITALS</h1>
+    <p>7 Day Trend</p>
+    </div>
+    <div className='px-5'>
+      <p><span className='text-[#16689b] font-bold'>92% Average</span> conssistency this week. Attendance is slightly higher than department average</p>
+    </div>
+  </div>
 </div>
 
 
 
+</div>
+
+
+</div>
+
+
+<div className='mt-10'>
+  <h1 className='text-center text-[#1A5276]'>VEIW ALL 28 STUDENTS</h1>
+</div>
 
 
              
