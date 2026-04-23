@@ -25,6 +25,8 @@ import { CgExport } from "react-icons/cg";
 import { FaRegSave } from "react-icons/fa";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoIosInformationCircleOutline } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import { TbReportAnalytics } from "react-icons/tb";
 
 
 
@@ -598,8 +600,7 @@ const listItems = [
 <div className='flex flex-col gap-5 mt-10 lg:flex lg:flex-row lg:gap-10'>
 <div className='mt-10 bg-white rounded-lg shadow-sm border border-gray-100 lg:w-[60%]'>
 
-
-  <div>
+<div>
     <div className='flex justify-between p-2 bg-gray-200'>
       <p>STUDENT ARCHIVE</p>
       <p>STUDENT REGISFRY</p>
@@ -639,7 +640,13 @@ const listItems = [
 
     </div>
   ))}
+ 
+
+  
+
 </div>
+
+
 
 <div>
 <div className='bg-[#1A5276] text-white p-5 rounded-lg lg:h-70 overflow-y-auto'>
@@ -670,7 +677,16 @@ const listItems = [
   </div>
 </div>
 
-
+<div className='flex justify-center gap-10 mt-5'>
+  <div className='flex flex-col gap-3 bg-gray-300 items-center p-3 rounded-lg'>
+<MdEmail size={30}/>
+<p className='text-sm'>EMAIL ABSENT</p>
+  </div>
+  <div className='flex flex-col gap-3 bg-[#6B4604] text-[#d19b3d] items-center p-3 rounded-lg'>
+<TbReportAnalytics size={30}/>
+<p className='text-sm'>FULL REPORT</p>
+  </div>
+</div>
 
 </div>
 
@@ -678,10 +694,15 @@ const listItems = [
 </div>
 
 
-<div className='mt-10'>
-  <h1 className='text-center text-[#1A5276]'>VEIW ALL 28 STUDENTS</h1>
+  <div>
+<div className='mt-5 text-center'>
+  <p>VIEW ALL 28 STUDENTS</p>
 </div>
 
+
+{/* <div className='bg-gray-200 p-20 rounded-lg w-[50%]'></div> */}
+
+</div>
 
              
               </div>
