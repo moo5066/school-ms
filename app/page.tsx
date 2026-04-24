@@ -730,7 +730,7 @@ const listItems = [
 
 
 <div>
-  <div className=' h-70 w-60 bg-white shadow-sm  mt-10 p-2'>
+  <div className=' h-70 w-60 bg-white shadow-sm  mt-10 p-2 hover:border hover:border-[#1a5276]'>
    <p className='mt-5 text-sm text-gray-500'> CLASS AVERAGE</p>
    <h1 className='text-6xl font-bold text-[#1A5276]'>84.2 <span>%</span></h1>
 
