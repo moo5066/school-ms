@@ -700,7 +700,6 @@ const listItems = [
 </div>
 
 
-{/* <div className='bg-gray-200 p-20 rounded-lg w-[50%]'></div> */}
 
 </div>
 
@@ -710,15 +709,39 @@ const listItems = [
 
             {active === "Grades" && (
               <div>
-              <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100'>
-                <div>
-                <h2 className='text-xl font-bold text-[#1A5276] mb-4'>Grades</h2>
-                <p className='text-gray-600'>Here you can find all the grade records in the academic archive.</p>
+              <div className='bg-white shadow-sm rounded-lg p-6   flex flex-col gap-5 lg:flex lg:flex-row justify-between lg:items-center'>
+                <div className=''>
+                <h2 className='text-sm text-gray-500'>ACADEMIC YEAR 2023/24 . SEMESTER ||</h2>
+                <p className='text-3xl font-bold text-[#1A5276] mt-1'>Adevanced Mathematics</p>
+                <p className='text-gray-600'>Gradebook Archive:SelectionA(Calculus&Linear Algebra)</p>
                 </div>
 
-
-
+                <div className='flex gap-5'>
+                <div className='flex space-x-2 items-center bg-white hover:bg-[#1A5276] hover:text-white p-2 shadow-md  rounded-lg'>
+                  <CgExport  size={15}/>
+                  <p className='text-sm'>Export PDF</p>
+                </div>
+                <div className='flex space-x-2 items-center bg-[#1A5276] text-white hover:bg-white hover:text-[#1A5276] hover:shadow-md p-2  rounded-lg'>
+                    <FaRegSave size={15}/>
+                  <p className='text-sm'>Save All Records</p>
+                </div>
+                </div>
               </div>
+
+
+<div>
+  <div className=' h-70 w-60 bg-white shadow-sm  mt-10 p-2'>
+   <p className='mt-5 text-sm text-gray-500'> CLASS AVERAGE</p>
+   <h1 className='text-6xl font-bold text-[#1A5276]'>84.2 <span>%</span></h1>
+
+   <div className='mt-5'>
+    <p className='text-sm'><span className='text-green-500'>3.4%</span> vs  last term</p>
+   </div>
+  </div>
+</div>
+
+
+
               </div>
             )}
 
