@@ -133,8 +133,8 @@ const gradeDistribution = [
 
   return (
     <div>
-      <div className='flex gap-4 p-5 min-h-screen bg-gray-50'>
-        <div className='border-r border-gray-300 w-64 sticky top-5 h-[calc(100vh-40px)]'>
+      <div className='flex gap-4 p-5 w-full h-full overflow-y-auto p-7  bg-gray-50'>
+        <div className='border-r border-gray-300 w-64 sticky top-5 lg:h-[calc(100vh-40px)]'>
           <div className='p-3 flex flex-col gap-1'>
             <h1 className='text-2xl font-bold text-[#1A5276]'>Atheneum</h1>
             <p className='text-gray-600'>Academic Archive</p>
@@ -207,7 +207,7 @@ const gradeDistribution = [
           <main className='space-y-6'>
             {active === "Dashboard" && (
               <div className='space-y-6'>
-                <div className='w-full flex justify-between gap-5 items-center'>
+                <div className='bg-white shadow-sm rounded-lg p-6 flex flex-col items-center gap-5 lg:flex-row lg:justify-between lg:items-center'>
                   <div>
                     <h2 className='text-2xl font-bold text-[#1A5276] mb-2'>Campus Overview</h2>
                     <p className='text-gray-600'>Curated academic analytics and real-time administrative metrics.</p>
@@ -229,7 +229,7 @@ const gradeDistribution = [
                   </div>
                 </div>
 
-<div className='flex flex-row gap-10'>
+<div className='lg:flex lg:flex-row flex flex-col gap-10'>
                 <div className='w-full grid grid-cols-1 md:grid-cols-3 gap-5'>
                   {schoolStats.map((stat) => (
                     <div key={stat.name} className='bg-white shadow-sm border border-gray-100 p-6 rounded-xl'>
@@ -251,7 +251,7 @@ const gradeDistribution = [
               </div>
 
               <div className='flex flex-col lg:flex-row w-full justify-around items-start gap-10'>
-                <div className='mt-10 lg:mt-20 bg-gray-200 p-5 rounded-lg w-full lg:max-w-[650px] min-h-[480px] flex flex-col justify-between'>
+                <div className='mt-10 lg:mt-20 bg-gray-200 p-5 rounded-lg w-full lg:max-w-[650px] flex flex-col justify-between'>
                   <div>
 
 
@@ -547,7 +547,7 @@ const gradeDistribution = [
 
             {active === "Attendance" && (
               <div>
-              <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col gap-5 lg:flex lg:flex-row justify-between  items-center'>
+              <div className='bg-white shadow-sm rounded-lg p-6 flex flex-col items-center gap-5 lg:flex-row lg:justify-between lg:items-center'>
                 <div>
                 <h2 className='text-xl font-bold text-[#1A5276] mb-4'>Attendance Manegmnet</h2>
                 <p className='text-gray-600'>Advanced Litterature-Room 402 .Archive ID:ALT-402-24.</p>
@@ -717,7 +717,7 @@ const gradeDistribution = [
 
             {active === "Grades" && (
               <div>
-              <div className='bg-white shadow-sm rounded-lg p-6   flex flex-col gap-5 lg:flex lg:flex-row justify-between lg:items-center'>
+              <div className='bg-white shadow-sm rounded-lg p-6 flex flex-col items-center gap-5 lg:flex-row lg:justify-between lg:items-center'>
                 <div className=''>
                 <h2 className='text-sm text-gray-500'>ACADEMIC YEAR 2023/24 . SEMESTER ||</h2>
                 <p className='text-3xl font-bold text-[#1A5276] mt-1'>Adevanced Mathematics</p>
@@ -848,3 +848,5 @@ export default Page
 // }
 
 // export default page
+
+
