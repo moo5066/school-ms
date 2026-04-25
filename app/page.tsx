@@ -118,6 +118,14 @@ const listItems = [
   "FINEARTS"
 ]
 
+const gradeDistribution = [
+  { grade: "F", value: 18, color: "bg-orange-400" },
+  { grade: "D", value: 32, color: "bg-amber-400" },
+  { grade: "C", value: 54, color: "bg-yellow-400" },
+  { grade: "B", value: 76, color: "bg-emerald-500" },
+  { grade: "A", value: 91, color: "bg-[#1A5276]" },
+]
+
 
 
 
@@ -730,7 +738,8 @@ const listItems = [
 
 
 <div>
-  <div className=' h-70 w-60 bg-white shadow-sm  mt-10 p-2 hover:border hover:border-[#1a5276]'>
+  <div className='flex flex-col gap-3 lg:flex lg:flex-row  items-center gap-10'>
+    <div className=' h-70 w-60 bg-white shadow-sm  mt-10 p-2 hover:border hover:border-[#1a5276]'>
    <p className='mt-5 text-sm text-gray-500'> CLASS AVERAGE</p>
    <h1 className='text-6xl font-bold text-[#1A5276]'>84.2 <span>%</span></h1>
 
@@ -738,8 +747,68 @@ const listItems = [
     <p className='text-sm'><span className='text-green-500'>3.4%</span> vs  last term</p>
    </div>
   </div>
+
+<div className='mt-10 w-full rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100 lg:max-w-[720px]'>
+  <div className='mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between'>
+    <div>
+      <p className='text-xs font-semibold tracking-[0.24em] text-gray-400'>GRADE DISTRIBUTION</p>
+      <h3 className='mt-2 text-xl font-bold text-[#1A5276]'>Performance Overview</h3>
+      <p className='mt-1 text-sm text-gray-500'>A balanced snapshot of learner outcomes across the current assessment cycle.</p>
+    </div>
+
+    <div className='self-start rounded-full bg-amber-50 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-[#6B4604] ring-1 ring-amber-200'>
+      Normal Curve
+    </div>
+  </div>
+
+  <div className='mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4'>
+    <div className='rounded-xl bg-slate-50 p-3'>
+      <p className='text-xs uppercase tracking-wide text-gray-400'>Highest Band</p>
+      <p className='mt-1 text-lg font-bold text-[#1A5276]'>A Grade</p>
+    </div>
+    <div className='rounded-xl bg-slate-50 p-3'>
+      <p className='text-xs uppercase tracking-wide text-gray-400'>Class Median</p>
+      <p className='mt-1 text-lg font-bold text-[#1A5276]'>B Level</p>
+    </div>
+    <div className='rounded-xl bg-slate-50 p-3'>
+      <p className='text-xs uppercase tracking-wide text-gray-400'>Pass Rate</p>
+      <p className='mt-1 text-lg font-bold text-emerald-600'>82%</p>
+    </div>
+    <div className='rounded-xl bg-slate-50 p-3'>
+      <p className='text-xs uppercase tracking-wide text-gray-400'>Needs Support</p>
+      <p className='mt-1 text-lg font-bold text-amber-600'>18%</p>
+    </div>
+  </div>
+
+  <div className='flex h-72 items-end justify-between gap-3 rounded-2xl bg-gradient-to-b from-slate-50 to-white px-4 pb-4 pt-8'>
+    {gradeDistribution.map((item) => (
+      <div key={item.grade} className='flex flex-1 flex-col items-center justify-end gap-3'>
+        <span className='text-xs font-semibold text-gray-500'>{item.value}%</span>
+        <div className='flex h-52 w-full max-w-[72px] items-end rounded-t-2xl bg-gray-100'>
+          <div
+            className={`w-full rounded-t-2xl ${item.color} shadow-sm transition-all duration-300`}
+            style={{ height: `${item.value}%` }}
+          />
+        </div>
+        <p className='text-sm font-bold tracking-wide text-gray-700'>{item.grade}</p>
+      </div>
+    ))}
+  </div>
+
+
+
+
 </div>
 
+<div className='text-[#6B4604] bg-[#ede0c593] p-3 rounded-lg mt-2 hover:border  hover:border-[#cda96a] shadow-sm lg:mb-70'>
+  <div className='flex flex-col gap-2'>
+    <p className='font-semibold text-sm'>AWAITING ENTRY</p>
+    <h1><span className='text-7xl font-bold'>04</span><span className='text-[#917b55] text-sm font-bold'>RECORDS</span></h1>
+  </div>
+</div>
+
+</div>
+</div>
 
 
               </div>
