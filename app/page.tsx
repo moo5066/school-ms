@@ -63,6 +63,15 @@ function handleThree() {
   setArchive("ID Card Printing")
 }
 
+const student ={
+  name:"STUDENT NAME",
+  id:"STUDENT ID",
+  midTerm:"MID-TERM (40%)",
+  finalExam:"FINAL EXAM (60%)",
+  totalMaark:"TOTAL MARK",
+  satus:"STATUS",
+}
+
 const [students , setStudents]=useState([
   {id:1, name: "Authur Pendragon" , uid:"2023-2012" , status:"PRESENT"},
   {id:2, name:"Guinerere Vance", uid:"2023-0045",status:"PRESENT"},
@@ -738,7 +747,7 @@ const gradeDistribution = [
 
 
 <div>
-  <div className='flex flex-col gap-3 lg:flex lg:flex-row  items-center gap-10'>
+  <div className='flex flex-col lg:flex lg:flex-row  items-center gap-10'>
     <div className=' h-70 w-60 bg-white shadow-sm  mt-10 p-2 hover:border hover:border-[#1a5276]'>
    <p className='mt-5 text-sm text-gray-500'> CLASS AVERAGE</p>
    <h1 className='text-6xl font-bold text-[#1A5276]'>84.2 <span>%</span></h1>
@@ -808,6 +817,34 @@ const gradeDistribution = [
 </div>
 
 </div>
+
+<div className='bg-white p-5 mt-10'>
+  <div>
+    <div className=''>
+      <div className='flex justify-between'>
+        <p className='text-[#083755] font-semibold'>Student Results Table</p>
+        <p>Sort by Name</p>
+      </div>
+
+<div>
+            {students.map((student) => (
+              <div key={student.id} className='flex justify-between items-center mt-3 px-3'>
+                <p>{student.name}</p>
+                <p>{student.id}</p>
+                <p>{student.midTerm}</p>
+                <p>{student.finalExam}</p>
+                <p>{student.totalMark}</p>
+                <p>{student.status}</p>
+              </div>
+            ))}
+          </div>
+
+
+    </div>
+  </div>
+</div>
+
+
 </div>
 
 
