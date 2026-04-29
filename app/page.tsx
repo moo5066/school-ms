@@ -27,7 +27,10 @@ import { CiMenuBurger } from "react-icons/ci";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { TbReportAnalytics } from "react-icons/tb";
+import { FaGreaterThan } from "react-icons/fa6";
+import { FaLessThan } from "react-icons/fa6";
 
+import { WiStars } from "react-icons/wi";
 
 
 const Page = () => {
@@ -63,14 +66,14 @@ function handleThree() {
   setArchive("ID Card Printing")
 }
 
-const student ={
-  name:"STUDENT NAME",
-  id:"STUDENT ID",
-  midTerm:"MID-TERM (40%)",
-  finalExam:"FINAL EXAM (60%)",
-  totalMaark:"TOTAL MARK",
-  satus:"STATUS",
-}
+// const student ={
+//   name:"STUDENT NAME",
+//   id:"STUDENT ID",
+//   midTerm:"MID-TERM (40%)",
+//   finalExam:"FINAL EXAM (60%)",
+//   totalMaark:"TOTAL MARK",
+//   satus:"STATUS",
+// }
 
 const [students , setStudents]=useState([
   {id:1, name: "Authur Pendragon" , uid:"2023-2012" , status:"PRESENT"},
@@ -89,6 +92,7 @@ prev.map(student =>
 }
 
 
+const [tiro, setTiro]=useState(1)
 
 
 
@@ -823,26 +827,98 @@ const gradeDistribution = [
     <div className=''>
       <div className='flex justify-between'>
         <p className='text-[#083755] font-semibold'>Student Results Table</p>
-        <p>Sort by Name</p>
+        <p className='text-[#083755] font-semibold bg-gray-200 px-3 py-1 rounded-md'>Sort by Name</p>
       </div>
 
 <div>
-            {students.map((student) => (
-              <div key={student.id} className='flex justify-between items-center mt-3 px-3'>
-                <p>{student.name}</p>
-                <p>{student.id}</p>
-                <p>{student.midTerm}</p>
-                <p>{student.finalExam}</p>
-                <p>{student.totalMark}</p>
-                <p>{student.status}</p>
-              </div>
-            ))}
-          </div>
+<div className='flex justify-between lg:gap-5 text-xs gap-x-3 lg:text-lg mt-5 bg-gray-100 p-3 rounded-lg'>
+  <p>STUDENT NAME</p>
+  <p>STUDENT ID</p>
+  <p>MID TERM (40%)</p>
+  <p>FINAL EXAM (60%)</p>
+  <p>TOTAL MARK</p>
+  <p>STATUS</p>
+</div>
+</div>
 
+
+<div className='mt-7'>
+  <div>
+  <div className='flex justify-between text-xs lg:text-lg'>
+<h1><span className='bg-gray-200 p-2 text-[#083755]'>AA</span> <span className='font-semibold'>Adrian Ashcroft</span></h1>
+<p className='text-gray-400'>ATH-2023-0891</p>
+<p className='bg-gray-200 px-2 rounded-lg'>38</p>
+<p className='bg-gray-200 px-2 rounded-lg'>56</p>
+<p className='bg-gray-200 px-2 rounded-lg'>94.0%</p>
+<p className='bg-green-200 text-green-800 px-2 rounded-lg'>EXCELLENT</p>
+  </div>
+  <div className='flex justify-between text-xs lg:text-lg mt-10'>
+<h1><span className='bg-gray-200 p-2 text-[#083755]'>BE</span> <span className='font-semibold'>Beatrix Elroy</span></h1>
+<p className='text-gray-400'>ATH-2023-1102</p>
+<p className='bg-gray-200 px-2 rounded-lg'>32</p>
+<p className='bg-gray-200 px-2 rounded-lg'>48</p>
+<p className='bg-gray-200 px-2 rounded-lg'>80.0%</p>
+<p className='bg-blue-200 text-blue-800 px-2 rounded-lg'>GOOD</p>
+  </div>
+  <div className='flex justify-between text-xs lg:text-lg mt-10'>
+<h1><span className='bg-gray-200 p-2 text-[#083755]'>CM</span> <span className='font-semibold'>Cillian Murphy</span></h1>
+<p className='text-gray-400'>ATH-2023-0042</p>
+<p className='bg-gray-200 px-2 rounded-lg'>-</p>
+<p className='bg-gray-200 px-2 rounded-lg'>-</p>
+<p className='bg-gray-200 px-2 rounded-lg'>-</p>
+<p className='bg-green-200 text-green-800 px-2 rounded-lg'>PENDING</p>
+  </div>
+  <div className='flex justify-between text-xs lg:text-lg mt-10'>
+<h1><span className='bg-gray-200 p-2 text-[#083755]'>DW</span> <span className='font-semibold'>Diana Winthrop</span></h1>
+<p className='text-gray-400'>ATH-2023-0711</p>
+<p className='bg-gray-200 px-2 rounded-lg'>28</p>
+<p className='bg-gray-200 px-2 rounded-lg'>38</p>
+<p className='bg-gray-200 px-2 rounded-lg'>66.0%</p>
+<p className='bg-green-200 text-green-800 px-2 rounded-lg'>SATISFACTORY</p>
+  </div>
+  <div className='flex justify-between text-xs lg:text-lg mt-10'>
+<h1><span className='bg-gray-200 p-2 text-[#083755]'>ES</span> <span className='font-semibold'>Elias Sterling</span></h1>
+<p className='text-gray-400'>ATH-2023-0925</p>
+<p className='bg-gray-200 px-2 rounded-lg'>35</p>
+<p className='bg-gray-200 px-2 rounded-lg'>52</p>
+<p className='bg-gray-200 px-2 rounded-lg'>87.0%</p>
+<p className='bg-green-200 text-green-800 px-2 rounded-lg'>EXCELLENT</p>
+  </div>
+  </div>
+</div>
 
     </div>
   </div>
 </div>
+
+<div className='mt-10'>
+  <div className='flex justify-between'>
+    <p>Showing 5 of 32 student records</p>
+
+<div className='flex flex-row gap-3'>
+<p className='bg-white border border-gray-300 p-2 w-10 h-10 text-center'><FaLessThan size={15}/></p>
+<p onClick={()=>setTiro(1)} className={` border border-gray-300 p-2 w-10 h-10 text-center cursor-pointer ${tiro === 1 ? "bg-[#1A5276] text-white" : "bg-white text-[#1A5276]"}`}>1</p>
+<p onClick={()=>setTiro(2)} className={` border border-gray-300 p-2 w-10 h-10 text-center cursor-pointer ${tiro === 2 ? "bg-[#1A5276] text-white" : "bg-white text-[#1A5276]"}`}>2</p>
+  
+<p onClick={()=>setTiro(3)} className={`border border-gray-300 p-2 w-10 h-10 text-center cursor-pointer ${tiro === 3 ? "bg-[#1A5276] text-white" : "bg-white text-[#1A5276]"}`}>3</p>
+
+<p className='bg-white border border-gray-300 p-2 w-10 h-10 text-center'><FaGreaterThan size={15}/></p>
+</div>
+</div>
+  </div>
+
+<div>
+  <div className='flex flex-row gap-5 bg-[#6B4604] text-[#d19b3d] p-5 rounded-lg mt-10 items-center'>
+<WiStars size={60}/>
+<div>
+  <h1>CURATOR'S INSIGHT</h1>
+  <p>Performance in section A shows a strong correlation between Mid-term engagm,ent and final results. Students scoring below 25 in mid-terms may  benefit from the upcoming Calculs reinforceement workshop on july 14th</p>
+</div>
+  </div>
+</div>
+
+
+
 
 
 </div>
