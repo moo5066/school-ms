@@ -932,7 +932,7 @@ const gradeDistribution = [
                 <p className='max-w-3xl text-sm leading-6 text-gray-600 md:text-base'>Manage institutional credentials, system-wide preferences, and security protocols for the digital Atheneum ecosystem.</p>
 </div>
 
-<div className='flex flex-col items-start gap-6 rounded-xl border border-gray-100 bg-white p-5 shadow-sm md:flex-row md:items-center md:gap-8 md:p-6'>
+<div className='flex flex-col lg:w-[40%] lg:h-100 gap-6 border border-gray-100 bg-white p-5 shadow-sm md:flex-row md:items-center md:gap-8 md:p-6'>
   <div className='relative shrink-0'>
     {/* profile picture */}
     <Image src="/mo image.jpeg" alt="Profile Picture" width={128} height={128} className='h-28 w-28 rounded-xl object-cover shadow-sm ring-4 ring-gray-100 md:h-32 md:w-32'/>
@@ -942,16 +942,28 @@ const gradeDistribution = [
   </div>
 
   <div className='flex flex-1 flex-col gap-4'>
+    <div >
     <p className='w-fit rounded-full bg-[#6B4604] px-3 py-1 text-xs font-semibold tracking-wide text-white'>PRINCIPAL ARCHIVER</p>
     <div>
     <p className='text-xl font-semibold text-gray-900'>Mohamed Abdulkadir Abdulahi</p>
     <p className='text-sm text-gray-600'>maxamedgoley@gmail.com</p>
     </div>
     
-<button className='flex gap-3 bg-[#1A5276] w-fit  text-white px-4 py-3 duration-150 text-transparent  rounded-lg items-center'><span className='bg-[#245d81] p-1 rounded-lg shadiw-lg'><MdModeEdit/></span> Edit Profile</button>
+<button className='flex gap-3 bg-[#1A5276] w-fit  text-white px-4 py-3 duration-150  rounded-lg items-center'><span className='bg-[#245d81] p-1 rounded-lg shadiw-lg'><MdModeEdit/></span> Edit Profile</button>
+
+</div>
+
+<div>
+  <div>
 
   </div>
 </div>
+
+
+  </div>
+</div>
+
+
 </div>
 
 
