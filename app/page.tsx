@@ -29,8 +29,9 @@ import { MdEmail } from "react-icons/md";
 import { TbReportAnalytics } from "react-icons/tb";
 import { FaGreaterThan } from "react-icons/fa6";
 import { FaLessThan } from "react-icons/fa6";
-
 import { WiStars } from "react-icons/wi";
+import { IoCameraOutline } from "react-icons/io5";
+import { MdModeEdit } from "react-icons/md";
 
 
 const Page = () => {
@@ -105,9 +106,6 @@ const [tiro, setTiro]=useState(1)
 // function handleAttendenceTwelve() {
 //   setAttendence("LATE")
 // }
-
-const [on,setOn]=useState()
-
 
   // const lists =[
     
@@ -515,7 +513,7 @@ const gradeDistribution = [
   <div className=' p-5 rounded-lg mt-5 bg-[#ded6c8]'>
   <div className='flex items-center gap-3 mb-3 text-2xl font-bold justify-center text-[#6b4604]'>
 <FcIdea/>
-<p>CURATOR'S NOTES</p>
+<p>CURATOR&apos;S NOTES</p>
 </div>
 <div>
   <p className='text-gray-500 text-sm text-mono'>This section provides a comprehensive overview of the students in Grade 12, showcasing their academic performance, attendance records, and overall class insights. The directory allows for easy access to individual student profiles, enabling educators and administrators to monitor progress and identify areas for support.</p>
@@ -672,7 +670,7 @@ const gradeDistribution = [
 <div>
 <div className='bg-[#1A5276] text-white p-5 rounded-lg lg:h-70 overflow-y-auto'>
   <div>
-    <h1 className='text-2xl  font-semibold'>Cusator's Notes</h1>
+    <h1 className='text-2xl  font-semibold'>Curator&apos;s Notes</h1>
 <div className='flex items-center gap-5 mt-5'>
   <IoIosInformationCircleOutline size={30}/>
   <p className='text-medium'>Session forcus:Victorian Era symbolism in Gothic Architecture.Quiz scheduled for tomorrow.</p>
@@ -911,7 +909,7 @@ const gradeDistribution = [
   <div className='flex flex-row gap-5 bg-[#6B4604] text-[#d19b3d] p-5 rounded-lg mt-10 items-center'>
 <WiStars size={60}/>
 <div>
-  <h1>CURATOR'S INSIGHT</h1>
+  <h1>CURATOR&apos;S INSIGHT</h1>
   <p>Performance in section A shows a strong correlation between Mid-term engagm,ent and final results. Students scoring below 25 in mid-terms may  benefit from the upcoming Calculs reinforceement workshop on july 14th</p>
 </div>
   </div>
@@ -928,10 +926,36 @@ const gradeDistribution = [
             )}
 
             {active === "Settings" && (
-              <div className='p-6 bg-white rounded-xl shadow-sm border border-gray-100'>
-                <h2 className='text-xl font-bold text-[#1A5276] mb-4'>Settings</h2>
-                <p className='text-gray-600'>Here you can adjust your settings and preferences for the academic archive.</p>
-              </div>
+              <div className='space-y-6'>
+              <div className='rounded-xl border border-gray-100 bg-white p-6 shadow-sm'>
+                <h2 className='mb-3 text-xl font-bold text-[#1A5276]'>System Governance</h2>
+                <p className='max-w-3xl text-sm leading-6 text-gray-600 md:text-base'>Manage institutional credentials, system-wide preferences, and security protocols for the digital Atheneum ecosystem.</p>
+</div>
+
+<div className='flex flex-col items-start gap-6 rounded-xl border border-gray-100 bg-white p-5 shadow-sm md:flex-row md:items-center md:gap-8 md:p-6'>
+  <div className='relative shrink-0'>
+    {/* profile picture */}
+    <Image src="/mo image.jpeg" alt="Profile Picture" width={128} height={128} className='h-28 w-28 rounded-xl object-cover shadow-sm ring-4 ring-gray-100 md:h-32 md:w-32'/>
+    <button className='absolute -bottom-3 -right-3 flex h-10 w-10 items-center justify-center rounded-lg bg-white text-[#1A5276] shadow-lg ring-1 ring-gray-200 transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#1A5276]/30'>
+      <IoCameraOutline size={20} />
+    </button>
+  </div>
+
+  <div className='flex flex-1 flex-col gap-4'>
+    <p className='w-fit rounded-full bg-[#6B4604] px-3 py-1 text-xs font-semibold tracking-wide text-white'>PRINCIPAL ARCHIVER</p>
+    <div>
+    <p className='text-xl font-semibold text-gray-900'>Mohamed Abdulkadir Abdulahi</p>
+    <p className='text-sm text-gray-600'>maxamedgoley@gmail.com</p>
+    </div>
+    
+<button className='flex gap-3 bg-[#1A5276] w-fit  text-white px-4 py-3 duration-150 text-transparent  rounded-lg items-center'><span className='bg-[#245d81] p-1 rounded-lg shadiw-lg'><MdModeEdit/></span> Edit Profile</button>
+
+  </div>
+</div>
+</div>
+
+
+              
             )}
           </main>
         
@@ -961,5 +985,3 @@ export default Page
 // }
 
 // export default page
-
-
