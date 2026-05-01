@@ -32,6 +32,10 @@ import { FaLessThan } from "react-icons/fa6";
 import { WiStars } from "react-icons/wi";
 import { IoCameraOutline } from "react-icons/io5";
 import { MdModeEdit } from "react-icons/md";
+import { CiMenuFries } from "react-icons/ci";
+import { RxSwitch } from "react-icons/rx";
+import { MdDarkMode } from "react-icons/md";
+import { MdTextsms } from "react-icons/md";
 
 
 const Page = () => {
@@ -932,6 +936,7 @@ const gradeDistribution = [
                 <p className='max-w-3xl text-sm leading-6 text-gray-600 md:text-base'>Manage institutional credentials, system-wide preferences, and security protocols for the digital Atheneum ecosystem.</p>
 </div>
 
+<div className='flex flex-col gap-3 lg:flex lg:flex-row lg:items-center lg:justify-around lg:gap-3'>
 <div className='flex flex-col lg:w-[40%] lg:h-100 gap-6 border border-gray-100 bg-white p-5 shadow-sm md:flex-row md:items-center md:gap-8 md:p-6'>
   <div className='relative shrink-0'>
     {/* profile picture */}
@@ -941,7 +946,7 @@ const gradeDistribution = [
     </button>
   </div>
 
-  <div className='flex flex-1 flex-col gap-4'>
+  <div className='flex flex-1 flex-col gap-'>
     <div >
     <p className='w-fit rounded-full bg-[#6B4604] px-3 py-1 text-xs font-semibold tracking-wide text-white'>PRINCIPAL ARCHIVER</p>
     <div>
@@ -949,23 +954,56 @@ const gradeDistribution = [
     <p className='text-sm text-gray-600'>maxamedgoley@gmail.com</p>
     </div>
     
-<button className='flex gap-3 bg-[#1A5276] w-fit  text-white px-4 py-3 duration-150  rounded-lg items-center'><span className='bg-[#245d81] p-1 rounded-lg shadiw-lg'><MdModeEdit/></span> Edit Profile</button>
+<button className='flex gap-3 bg-[#1A5276] w-fit  text-white px-4 py-3 duration-150 transition-transform hover:scale-105 rounded-lg items-center'><span className='bg-[#245d81] p-1 rounded-lg shadow-lg'><MdModeEdit/></span> Edit Profile</button>
 
 </div>
 
+  </div>
+</div>
+
+
+<div className='mt-10 bg-gray-300 p-5 rounded-lg flex flex-col gap-5'>
+  <div className='flex flex-row items-center gap-3 text-xl font-bold justify-center text-[#6b4604]'>
+<CiMenuFries/>
+<p>System Preferences</p>
+  </div>
+  <div  className='flex flex-col gap-5'>
+    <div className='flex justify-around lg:gap-5 items-center  bg-white shadow-md p-5 rounded-lg'>
+      <MdEmail size={30} />
+      <div>
+      <p className='text-md font-bold'>Email Notification</p>
+      <p className='text-xs text-gray-600'>Daily digest of archival activities</p>
+    </div>
 <div>
-  <div>
-
+  <RxSwitch size={30}/>
+</div>
+    </div>
+    <div className='flex justify-around lg:gap-5 items-center  bg-white shadow-md p-5 rounded-lg'>
+      <MdTextsms size={30} />
+      <div>
+      <p className='text-md font-bold'>SMS Alerts</p>
+      <p className='text-xs text-gray-600' >Critical security bypass alerts</p>
+    </div>
+<div>
+  <RxSwitch size={30}/>
+</div>
+    </div>
+    <div className='flex justify-around lg:gap-5 items-center  bg-white shadow-md p-5 rounded-lg'>
+      <MdDarkMode size={30} />
+      <div>
+      <p className='text-md font-bold'>Dark Mode</p>
+      <p className='text-xs text-gray-600' >Reduced glare for night studying</p>
+    </div>
+<div>
+  <RxSwitch size={30}/>
+</div>
+    </div>
   </div>
 </div>
 
 
-  </div>
 </div>
-
-
 </div>
-
 
               
             )}
