@@ -148,7 +148,7 @@ const gradeDistribution = [
 
   return (
     <div>
-      <div className='flex gap-4 p-5 w-full h-full overflow-y-auto p-7  bg-gray-50'>
+      <div className='flex gap-4 w-full h-full  p-7  bg-gray-50'>
         <div className='border-r border-gray-300 w-64 sticky top-5 lg:h-[calc(100vh-40px)]'>
           <div className='p-3 flex flex-col gap-1'>
             <h1 className='text-2xl font-bold text-[#1A5276]'>Atheneum</h1>
