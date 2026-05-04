@@ -968,31 +968,31 @@ const gradeDistribution = [
 <p>System Preferences</p>
   </div>
   <div  className='flex flex-col gap-5'>
-    <div className='flex justify-around lg:gap-5 items-center  bg-white shadow-md p-5 rounded-lg'>
+    <div className='flex gap-2 justify-around lg:gap-5 items-center  bg-white shadow-md p-5 rounded-lg hover:bg-[#1A5276] hover:text-white transition-colors'>
       <MdEmail size={30} />
       <div>
       <p className='text-md font-bold'>Email Notification</p>
-      <p className='text-xs text-gray-600'>Daily digest of archival activities</p>
+      <p className='text-xs text-gray-600 hover:text-white'>Daily digest of archival activities</p>
     </div>
 <div>
   <RxSwitch size={30}/>
 </div>
     </div>
-    <div className='flex justify-around lg:gap-5 items-center  bg-white shadow-md p-5 rounded-lg'>
+    <div className='flex gap-2 justify-around lg:gap-5 items-center  bg-white shadow-md p-5 rounded-lg hover:bg-[#1A5276] hover:text-white transition-colors'>
       <MdTextsms size={30} />
       <div>
       <p className='text-md font-bold'>SMS Alerts</p>
-      <p className='text-xs text-gray-600' >Critical security bypass alerts</p>
+      <p className='text-xs text-gray-600 hover:text-white' >Critical security bypass alerts</p>
     </div>
 <div>
   <RxSwitch size={30}/>
 </div>
     </div>
-    <div className='flex justify-around lg:gap-5 items-center  bg-white shadow-md p-5 rounded-lg'>
+    <div className='flex gap-2 justify-around lg:gap-5 items-center  bg-white shadow-md p-5 rounded-lg hover:bg-[#1A5276] hover:text-white transition-colors'>
       <MdDarkMode size={30} />
       <div>
       <p className='text-md font-bold'>Dark Mode</p>
-      <p className='text-xs text-gray-600' >Reduced glare for night studying</p>
+      <p className='text-xs text-gray-600 hover:text-white' >Reduced glare for night studying</p>
     </div>
 <div>
   <RxSwitch size={30}/>
