@@ -36,7 +36,7 @@ import { CiMenuFries } from "react-icons/ci";
 import { RxSwitch } from "react-icons/rx";
 import { MdDarkMode } from "react-icons/md";
 import { MdTextsms } from "react-icons/md";
-
+// import { MdHome } from "react-icons/md"
 
 const Page = () => {
   // State to keep track of the currently active navigation item.
